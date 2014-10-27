@@ -84,10 +84,15 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <!-- IE8 has some issues with @font-face when combined with :before -->
+    <!-- Read: http://getbootstrap.com/getting-started/#support-ie8-font-face -->
+    <!--[if IE 8]>
+    <script src="scripts/ie8-fontface-before-workaround.js"></script>
+    <![endif]-->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <!-- endbuild -->
 </body>
 </html>
