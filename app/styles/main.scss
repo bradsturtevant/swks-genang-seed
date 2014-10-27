@@ -3,6 +3,14 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+// Bootstrap workaround for IE10 viewport for Surface/desktop Windows 8
+// Read: http://getbootstrap.com/getting-started/#support-ie10-width
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
