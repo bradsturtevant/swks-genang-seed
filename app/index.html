@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap is not supported in the old IE compatibility modes. -->
     <!-- http://getbootstrap.com/getting-started/#support-ie-compatibility-modes -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -90,6 +90,11 @@
     <!--[if IE 8]>
     <script src="scripts/ie8-fontface-before-workaround.js"></script>
     <![endif]-->
+
+    <!-- Bootstrap workaround for IE10 viewport for Surface/desktop Windows 8 -->
+    <!-- Read: http://getbootstrap.com/getting-started/#support-ie10-width -->
+    <script src="scripts/ie10-viewport-bug-workaround.js"></script>
+
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/about.js"></script>
