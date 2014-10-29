@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap is not supported in the old IE compatibility modes. -->
+    <!-- http://getbootstrap.com/getting-started/#support-ie-compatibility-modes -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -15,8 +18,14 @@
     <!-- endbuild -->
   </head>
   <body ng-app="swksApp">
+
+    <!-- Yeoman Angular Generator solution -->
     <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browsehappy">
+      You are using an <strong>outdated</strong> browser. 
+      Please <a href="http://browsehappy.com/">upgrade your browser</a> 
+      to improve your experience.
+    </p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
@@ -49,10 +58,15 @@
        ga('send', 'pageview');
     </script>
 
+    <!-- Bootstrap suggests html5shiv for enabling any missing HTML5 elements -->
+    <!-- Bootstrap suggests Respond.js for enabling any missing media queries -->
+    <!-- Read: http://getbootstrap.com/getting-started/#support-ie8-respondjs -->
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+    <script src="bower_components/respond/dest/respond.min.js"></script>
     <![endif]-->
     <!-- endbuild -->
 
@@ -81,10 +95,24 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <!-- IE8 has some issues with @font-face when combined with :before -->
+    <!-- Read: http://getbootstrap.com/getting-started/#support-ie8-font-face -->
+    <!--[if IE 8]>
+    <script src="scripts/ie8-fontface-before-workaround.js"></script>
+    <![endif]-->
+
+    <!-- Bootstrap workaround for IE10 viewport for Surface/desktop Windows 8 -->
+    <!-- Read: http://getbootstrap.com/getting-started/#support-ie10-width -->
+    <script src="scripts/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- Bootstrap Android workaround for <select> and border-radius, border -->
+    <!-- http://getbootstrap.com/getting-started/#support-android-stock-browser -->
+    <script src="scripts/android-select-border-workaround.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <!-- endbuild -->
 </body>
 </html>
